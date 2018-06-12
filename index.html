@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>ex</title>
+</head>
+<style type="text/css">
+   body {
+      margin: 0px;
+   }
+   .container {
+      background-color: black;
+      width: 100%;
+      height: 600px; 
+      color: white;
+   }
+   a {
+      text-decoration: none;
+      color: white;
+   }
+   .header {
+      height: 170px;
+   }
+   .header .title {
+      /* block 속성일때만 text-align: center 가능 */
+      text-align: center;
+      font-family: 'a시월구일2';
+      color: white;
+      font-size: 25px;
+   }
+   .header .title a h1{
+      margin: 0px;
+      padding: 10px;
+   }
+   .header .nav {
+      text-align: center;
+   }
+   .header .nav .btn{
+      font-family: 'a시월구일3';
+      font-size: 20px;
+      color: white;
+      
+   }
+   .header .nav .btn:hover{
+      /* 
+         padding은 background-color 적용 된다.
+         margin은 안된다
+      */
+      background-color: lightgray;
+      color: black;
+   }
+   @media screen and (min-width:690px) {
+      .menu span{
+         display: none;
+      }
+      .header .nav .btn{
+         width: 12%;
+         display: inline-block;
+         padding: 20px 15px;
+      }
+   }
+   @media screen and (max-width:691px) {
+      .header .nav .btn{
+         display: none;
+         z-index: 1000;
+      }
+      .menu {
+         cursor: pointer;
+         display: inline-block;
+      }
+      /*.eader .nav .menu를 호버할때 한 칸 띄었으니까 (자식)중에 .menu .list .btn에 적용되는 css*/
+      .header .nav .menu:hover .menu_list .btn{
+         display: block;
+         z-index: 1000;
+      }
+   }
+   /*앞에걸 호버했을 때 뒤에있는게 바뀜*/
+   .article {
+      height: 500px;
+   }
+   .article .banner{
+      height: 400px;
+   }
+   .article .banner .image {
+      width: 100%;
+      height: 100%;
+   }
+   .article .content {
+      padding: 15px;
+      font-size: 20px;
+      text-align: center;
+   }
+</style>
+<body>
+   <div class="container header">
+      <div class="title">
+         <a href="index.html">
+            <h1>MAC</h1>
+         </a>
+      </div>
+      <div class="nav">
+         <div class="menu">
+            <span>메뉴보기</span>
+            <div class="menu_list">
+               <a href="intro.html">
+                  <div class="btn">소개하기</div>
+               </a>
+               <a href="test02.html">
+                  <div class="btn">소개하기</div>
+               </a>
+               <a href="3.html">
+                  <div class="btn">소개하기</div>
+               </a>
+               <a href="4.html">
+                  <div class="btn">소개하기</div>
+               </a>
+               <a href="5.html">
+                  <div class="btn">소개하기</div>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container article">
+      <div class="banner">
+         <img class="image" src="mac1.png">
+      </div>
+      <div class="content">
+         제일 좋아하는 화장품 브랜드 MAC에 대한 사이트를 만들어보고싶었다.
+      </div>
+   </div>
+   <!-- <div class="container footer">
+
+   </div> -->
+</body>
+</html>
